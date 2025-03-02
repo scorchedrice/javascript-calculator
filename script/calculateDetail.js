@@ -9,10 +9,10 @@ export function calculateMultiplicationAndDivision(queue) {
         switch (elementType) {
             case 'number':
                 numberArray.push(popLeftValue);
-                continue
+                break
             case 'plusOrMinus':
                 operatorArray.push(popLeftValue);
-                continue
+                break
             case 'divideOrMultiple':
                 const popNumber = numberArray.pop();
                 const popLeftNumber = queue.popleft();

@@ -12,9 +12,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let expressions = [];
     let currentNumber = '';
+    let calculated = false;
 
     numbers.forEach(numb => {
         numb.addEventListener('click', () => {
+            if (calculated) {
+                currentNumber = '';
+                displayInnerHTML({});
+                calculated = false;
+            }
             const value = numb.dataset.value;
             currentNumber += value;
             displayInnerHTML({currentNumber: currentNumber})
@@ -25,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         operator.addEventListener('click', () => {
             const value = operator.dataset.value;
             if (currentNumber !== '') {
-                expressions.push(parseInt(currentNumber));
+                expressions.push(parseFloat(currentNumber));
                 currentNumber = '';
                 switch (value) {
                     case '*':
@@ -47,11 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     equal.addEventListener('click', () => {
         if (currentNumber !== '') {
-            expressions.push(parseInt(currentNumber));
+            expressions.push(parseFloat(currentNumber));
             const result = calculateManager(expressions, calculateQueue);
             displayInnerHTML({expressions: expressions, currentNumber: `${result}`})
             currentNumber = `${result}`
             expressions = [];
+            calculated = true;
         } else {
             alert('마지막이 연산자로 끝나는 수식은 계산이 불가한 수식입니다.')
         }
