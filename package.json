@@ -4,7 +4,9 @@
   "scripts": {
     "test": "jest"
   },
+  "type": "module",
   "dependencies": {
+    "sass": "^1.85.1",
     "typescript": "^5.7.2"
   },
   "devDependencies": {

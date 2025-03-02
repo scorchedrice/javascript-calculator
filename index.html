@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="display">
+            <div class="expressions"></div>
+            <div class="currentNumber"></div>
+        </div>
+        <div class="buttons">
+            <!-- Row 1 -->
+            <span href="#" class="btn delete"><</span>
+            <span href="#" class="btn clear">AC</span>
+            <span href="#" class="btn operator" data-value="/">÷</span>
+
+            <!-- Rows 2-4 -->
+            <span href="#" class="btn number" data-value="7">7</span>
+            <span href="#" class="btn number" data-value="8">8</span>
+            <span href="#" class="btn number" data-value="9">9</span>
+            <span href="#" class="btn operator" data-value="*">×</span>
+
+            <span href="#" class="btn number" data-value="4">4</span>
+            <span href="#" class="btn number" data-value="5">5</span>
+            <span href="#" class="btn number" data-value="6">6</span>
+            <span href="#" class="btn operator" data-value="-">-</span>
+
+            <span href="#" class="btn number" data-value="1">1</span>
+            <span href="#" class="btn number" data-value="2">2</span>
+            <span href="#" class="btn number" data-value="3">3</span>
+            <span href="#" class="btn operator" data-value="+">+</span>
+
+            <span href="#" class="btn number zero" data-value="0">0</span>
+            <span href="#" class="btn decimal">.</span>
+            <span href="#" class="btn equals">=</span>
+        </div>
+    </div>
+    <script type="module" src="script/htmlScriptManager.js"></script>
+</body>
+</html>
